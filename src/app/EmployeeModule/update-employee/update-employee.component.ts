@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from '../employee.service';
+import { Observable } from 'rxjs';
+import { Country } from 'src/app/CountryModule/country';
+import { CountryService } from 'src/app/CountryModule/country.service';
 
 @Component({
   selector: 'app-update-employee',
@@ -12,8 +15,9 @@ export class UpdateEmployeeComponent implements OnInit {
 
   id: number;
   employee: Employee;
+  countries: Observable<Country[]>;
 
-  constructor(private route: ActivatedRoute,private router: Router,
+  constructor(private route: ActivatedRoute,private router: Router,private countryService: CountryService,
     private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
@@ -26,6 +30,8 @@ export class UpdateEmployeeComponent implements OnInit {
         console.log(data)
         this.employee = data;
       }, error => console.log(error));
+
+    this.countries = this.countryService.getCountryList();
   }
 
   updateEmployee() {

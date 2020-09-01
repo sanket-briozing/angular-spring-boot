@@ -2,6 +2,9 @@ import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Country } from 'src/app/CountryModule/country';
+import { CountryService } from 'src/app/CountryModule/country.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -12,11 +15,17 @@ export class AddEmployeeComponent implements OnInit {
 
   employee: Employee = new Employee();
   submitted = false;
+  countries: Observable<Country[]>;
 
-  constructor(private employeeService: EmployeeService,
+  constructor(private employeeService: EmployeeService,private countryService: CountryService,
     private router: Router) { }
 
   ngOnInit(): void {
+    this.reloadCountries();
+  }
+
+  reloadCountries() {
+    this.countries = this.countryService.getCountryList();
   }
 
   newEmployee(): void {

@@ -1,29 +1,30 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2>Employee List</h2>
+      <h2 style="font-size:35px;">Employee List
+        <button mat-raised-button (click)="addEmployee()" color="accent" style="float: right; background-color: DodgerBlue;"><mat-icon>person_add</mat-icon></button>
+      </h2>
     </div>
     <div class="panel-body">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Country</th>
-            <th>Errors</th>
-            <th>Actions</th>
+            <th style="font-size:25px;">Id</th>
+            <th style="font-size:25px;">Name</th>
+            <th style="font-size:25px;">Email</th>
+            <th style="font-size:25px;">Country</th>
+            <th style="font-size:25px;">Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody> 
           <tr *ngFor="let employee of employees | async">
-            <td>{{employee.id}}</td>
-            <td>{{employee.name}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.country}}</td>
-            <td>{{employee.errors}}</td>
+            <td style="font-size:20px;">{{employee.id}}</td>
+            <td style="font-size:20px;">{{employee.name}}</td>
+            <td style="font-size:20px;">{{employee.email}}</td>
+            <td style="font-size:20px;">{{employee.country}}</td>
             <td>
-              <button (click)="updateEmployee(employee.id)" class="btn btn-info" >Update</button>
-              <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button></td>
+              <button mat-fab style="background-color: DodgerBlue;" (click)="updateEmployee(employee.id)"><mat-icon>edit</mat-icon></button>
+              <button mat-fab style="margin-left: 10px; background-color: DodgerBlue;" aria-label="Example icon button with a delete icon" (click)="deleteEmployee(employee.id)"><mat-icon>delete</mat-icon></button>
+            </td>
           </tr>
         </tbody>
       </table>

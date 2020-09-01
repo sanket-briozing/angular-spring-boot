@@ -1,24 +1,16 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <!-- Links -->
-  <!-- <ul class="navbar-nav">
-    <li class="nav-item">
-        <a routerLink="employees" class="nav-link" routerLinkActive="active">Employee List</a>
-    </li>
-    <li class="nav-item">
-        <a routerLink="add" class="nav-link" routerLinkActive="active">Add Employee</a>
-    </li>
-  </ul> -->
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: DodgerBlue;">
+  
+  <button mat-icon-button [matMenuTriggerFor]="menu" style="color:white"><mat-icon>menu</mat-icon></button>
 
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item routerLink="employees" class="nav-link" routerLinkActive="active">Employee</button>
-  <button mat-menu-item>Country</button>
+  <button mat-menu-item routerLink="countries" class="nav-link" routerLinkActive="active">Country</button>
 </mat-menu>
 </nav>
 
 <div class="container">
   <br>
-  <h2 style="text-align: center;">{{title}}</h2>
+  <h2 style="text-align: center;font-size:40px;">{{title}}</h2>
   <hr>  
   <div class="card">
     <div class="card-body">
@@ -27,8 +19,8 @@
   </div>
 </div>
 
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
       <span>@Briozing</span>
   </div>
-</footer>
+</footer> -->

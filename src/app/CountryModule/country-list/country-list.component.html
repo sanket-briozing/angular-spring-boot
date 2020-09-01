@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 style="font-size:35px;">Country List
+        <button mat-raised-button (click)="addCountry()" style="float: right;color:white;background-color: DodgerBlue;"><mat-icon>add_location_alt</mat-icon></button>
+      </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="font-size:25px;">Id</th>
+            <th style="font-size:25px;">Country Name</th>
+            <th style="font-size:25px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of countries | async">
+            <td style="font-size:20px;">{{country.id}}</td>
+            <td style="font-size:20px;">{{country.name}}</td>
+            <td>
+              <button  mat-fab style="background-color: DodgerBlue;" (click)="updateCountry(country.id)" ><mat-icon>edit</mat-icon></button>
+              <button mat-fab style="margin-left: 10px; background-color: DodgerBlue;" aria-label="Example icon button with a delete icon" (click)="deleteCountry(country.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- class="btn btn-info" -->

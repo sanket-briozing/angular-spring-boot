@@ -1,0 +1,11 @@
+<h3 style="font-size:35px;">Add Country</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name" style="font-size:20px;">Country Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="country.name" name="name">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="cancel" class="btn btn-danger" (click)="gotoList()" style="margin-left: 10px">Cancel</button>
+  </form>
+</div>

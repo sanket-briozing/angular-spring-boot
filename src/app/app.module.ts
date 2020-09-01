@@ -10,14 +10,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AddCountryComponent } from './CountryModule/add-country/add-country.component';
+import { CountryListComponent } from './CountryModule/country-list/country-list.component';
+import { UpdateCountryComponent } from './CountryModule/update-country/update-country.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEmployeeComponent,
     EmployeeListComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    AddCountryComponent,
+    CountryListComponent,
+    UpdateCountryComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
     FormsModule,
     HttpClientModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
