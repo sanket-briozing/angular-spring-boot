@@ -11,6 +11,7 @@ import { EmployeeService } from "../employee.service";
 })
 export class EmployeeListComponent implements OnInit {
 
+  search : String;
   employees: Observable<Employee[]>;
   constructor(private employeeService: EmployeeService,
     private router: Router) { }
@@ -39,5 +40,9 @@ export class EmployeeListComponent implements OnInit {
 
   addEmployee(){
     this.router.navigate(['/add']);
+  }
+
+  onSubmit() {
+    this.employees=this.employeeService.getEmployeesByName(this.search);
   }
 }

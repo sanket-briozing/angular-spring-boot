@@ -1,7 +1,12 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
       <h2 style="font-size:35px;">Employee List
-        <button mat-raised-button (click)="addEmployee()" color="accent" style="float: right; background-color: DodgerBlue;"><mat-icon>person_add</mat-icon></button>
+        <form (ngSubmit)="onSubmit()" style="margin-left: 300px; font-size:20px;">
+          <input type="text" name="search" id="search" [(ngModel)]="search" [value]="search" size="30" placeholder="Search by name"/>
+          <button type="submit" name="submit" style="color:white;background-color: DodgerBlue;"> <mat-icon>search</mat-icon></button>
+          <button mat-raised-button (click)="addEmployee()" color="accent" style="float: right; background-color: DodgerBlue;"><mat-icon>person_add</mat-icon></button>
+        </form>
+        
       </h2>
     </div>
     <div class="panel-body">
